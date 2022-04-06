@@ -30,10 +30,8 @@ const PhoneMask = React.forwardRef(function PhoneMask(props, ref) {
 });
 
 
-
 const ItemDetails = (props) => {
     
-
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -66,14 +64,11 @@ const ItemDetails = (props) => {
         }
         props.updatePhoneContactsHandler(val);
 
-        
         navigate("/");
     }
-
     
     return (
         <Grid>
-            
             <Container sx={{marginBottom: '10px'}}maxWidth="xs" component={Paper} variant="outlined">
                 <Stack spacing={2} my={2}>
                         <Typography variant="h5">Edit</Typography>

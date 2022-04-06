@@ -13,10 +13,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import Box from '@mui/material/Box'
 
-
 const PhoneTable = (props) => {
     
-
     return (
         <Box>
             <Container component={Paper}  maxWidth="md" sx={{paddingTop: 2}} >
@@ -25,7 +23,6 @@ const PhoneTable = (props) => {
                         <Button variant="contained">Add Contact</Button>
                     </Link>
                 </Stack>
-                
                     <Table sx={{ minWidth: 450}} >
                         <TableHead>
                             <TableRow>
@@ -67,15 +64,13 @@ const PhoneTable = (props) => {
                                         >
                                             Delete
                                         </Button>
-                                        
                                     </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
                     </Table>
-                </Container>
-            </Box>
-       
+            </Container>
+        </Box>
     );
 }
 

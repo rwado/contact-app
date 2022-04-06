@@ -20,7 +20,6 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 
 
-
 const PhoneMask = React.forwardRef(function PhoneMask(props, ref) {
     const { onChange, ...other } = props;
     return (
@@ -36,8 +35,6 @@ const PhoneMask = React.forwardRef(function PhoneMask(props, ref) {
       />
     );
 });
-
-
 
 
 const AddItem = (props) => {
@@ -67,7 +64,6 @@ const AddItem = (props) => {
         setChecked(event.target.checked);
     };
     
-
     const saveButtonHandler = (e) => {
         e.preventDefault();
 
@@ -84,13 +80,12 @@ const AddItem = (props) => {
         }
         
         props.addPhoneContactHandler(val);
+
         if(!checked) {
             setOpen(true);
         }
         
         clearState();
-    
-
     }
 
     const clearState = () =>{
@@ -98,9 +93,6 @@ const AddItem = (props) => {
         setLastName('');
         setPhoneNumber('');
     }
-
-   
-
 
     return(
         <div>
@@ -143,8 +135,7 @@ const AddItem = (props) => {
                                     error={errors.phoneNumber.length > 0}
                                     value={phoneNumber}
                                     onChange={ (e) => setPhoneNumber(e.target.value)}
-                                    inputComponent={PhoneMask} 
-                                    
+                                    inputComponent={PhoneMask}                             
                                 />
                             {(errors.phoneNumber)?  (
                             <Typography
@@ -155,10 +146,7 @@ const AddItem = (props) => {
                             ) : <div></div>
                             }
                         </FormControl>
-                        
-
                     </Stack>
-
                     <Stack direction="row" spacing={2} mb={1.5} px={2}  justifyContent="flex-end">
 
                             <Link to="/" style={{ textDecoration: 'none'}}>
@@ -166,14 +154,10 @@ const AddItem = (props) => {
                                     Cancel
                                 </Button>
                             </Link>
-                        
-
                             <Button onClick={saveButtonHandler} sx={{width: '100px'}} variant="contained" size="medium">
                                 Save
                             </Button>
-                        
                     </Stack>
-                
                 </Container> 
                 <Container maxWidth="xs" component={Paper} variant="outlined" py={10}>
                     <Stack
@@ -189,11 +173,8 @@ const AddItem = (props) => {
                         onChange={toggleConfirmationMessage}
                         inputProps={{ 'aria-label': 'controlled' }}
                     />
-                                
-                        
                     </Stack>
-                </Container>
-                
+                </Container>  
             </form>
             <Container >
             <Dialog

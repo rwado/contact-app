@@ -19,11 +19,10 @@ const darkTheme = createTheme({
 
 function App() {
 
-  
   const [phoneContacts, setPhoneContacts] = useState([]);
 
-
-   const addPhoneContactHandler = (phoneContact) => {
+  // ADD
+  const addPhoneContactHandler = (phoneContact) => {
 
     const request = {
       id: uuid(),
@@ -37,13 +36,9 @@ function App() {
       .catch((err) => {
         console.log(err);
       })
-    
   };
 
-
-
   // UPDATE
-
   const updatePhoneContactsHandler = async (phoneContact) => {
 
     ApiService.update(`/phoneContacts/${phoneContact.id}`, phoneContact)
@@ -56,7 +51,6 @@ function App() {
   }
 
   // DELETE
-
   const removePhoneContactHandler = (id) => {
 
     ApiService.delete(`/phoneContacts/${id}`)
@@ -68,9 +62,7 @@ function App() {
       });
   }
 
-
   // GET
-
   useEffect(() => {
 
     ApiService.get("/phoneContacts")
@@ -81,7 +73,6 @@ function App() {
         console.log(err);
       });
   }, [])
-
 
   return (
     <ThemeProvider theme={darkTheme} >
